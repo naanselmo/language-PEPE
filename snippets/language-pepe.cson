@@ -1,0 +1,238 @@
+'.source.pepe':
+  'Add':
+    'prefix': 'add'
+    'body': 'ADD ${0:RX} ${1:RX/K}'
+  'Add plus Carry':
+    'prefix': 'addc'
+    'body': 'ADDC ${0:RX} ${1:RX}'
+  'Subtract':
+    'prefix': 'sub'
+    'body': 'SUB ${0:RX} ${1:RX/K}'
+  'Subtract minus Carry':
+    'prefix': 'subb'
+    'body': 'SUBB ${0:RX} ${1:RX}'
+  'Compare':
+    'prefix': 'cmp'
+    'body': 'CMP ${0:RX} ${1:RX/K}'
+  'Multiply':
+    'prefix': 'mul'
+    'body': 'MUL ${0:RX} ${1:RX}'
+  'Divide':
+    'prefix': 'div'
+    'body': 'DIV ${0:RX} ${1:RX}'
+  'Modulo':
+    'prefix': 'mod'
+    'body': 'MOD ${0:RX} ${1:RX}'
+  'Negate':
+    'prefix': 'neg'
+    'body': 'NEG ${0:RX}'
+  'Bitwise And':
+    'prefix': 'and'
+    'body': 'AND ${0:RX} ${1:RX}'
+  'Bitwise Or':
+    'prefix': 'or'
+    'body': 'OR ${0:RX} ${1:RX}'
+  'Not':
+    'prefix': 'not'
+    'body': 'NOT ${0:RX}'
+  'Exclusive OR':
+    'prefix': 'xor'
+    'body': 'XOR ${0:RX} ${1:RX}'
+  'Test':
+    'prefix': 'test'
+    'body': 'TEST ${0:RX} ${1:RX}'
+  'Bit':
+    'prefix': 'bit'
+    'body': 'BIT ${0:RX} ${1:N}'
+  'Set':
+    'prefix': 'set'
+    'body': 'SET ${0:RX} ${1:N}'
+  'Enable Interrupts':
+    'prefix': 'ei'
+    'body': 'EI}'
+  'Enable Interrupt 0':
+    'prefix': 'ei0'
+    'body': 'EI0'
+  'Enable Interrupt 1':
+    'prefix': 'ei1'
+    'body': 'EI1'
+  'Enable Interrupt 2':
+    'prefix': 'ei2'
+    'body': 'EI2'
+  'Enable Interrupt 3':
+    'prefix': 'ei3'
+    'body': 'EI3'
+  'Set Carry Flag':
+    'prefix': 'setc'
+    'body': 'SETC'
+  'Enable Direct Memory Access':
+    'prefix': 'edma'
+    'body': 'EDMA'
+  'Clear Bit':
+    'prefix': 'clr'
+    'body': 'CLR ${0:RX} ${1:N}'
+  'Disable Interrupts':
+    'prefix': 'di'
+    'body': 'DI'
+  'Disable Interrupt 0':
+    'prefix': 'di0'
+    'body': 'DI0'
+  'Disable Interrupt 1':
+    'prefix': 'di1'
+    'body': 'DI1'
+  'Disable Interrupt 2':
+    'prefix': 'di2'
+    'body': 'DI2'
+  'Disable Interrupt 3':
+    'prefix': 'di3'
+    'body': 'DI3'
+  'Clear Carry Flag':
+    'prefix': 'clrc'
+    'body': 'CLRC'
+  'Disable Direct Memory Access':
+    'prefix': 'ddma'
+    'body': 'DDMA'
+  'Complement Bit':
+    'prefix': 'cpl'
+    'body': 'CPL ${0:RX} ${1:N}'
+  'Complement Carry Flag':
+    'prefix': 'cplc'
+    'body': 'CPLC'
+  'Shift Right':
+    'prefix': 'shr'
+    'body': 'SHR ${0:RX} ${1:N}'
+  'Shift Left':
+    'prefix': 'shl'
+    'body': 'SHL ${0:RX} ${1:N}'
+  'Shift Right Arithmetic':
+    'prefix': 'shra'
+    'body': 'SHRA ${0:RX} ${1:N}'
+  'Shift Left Arithmetic':
+    'prefix': 'shla'
+    'body': 'SHLA ${0:RX} ${1:N}'
+  'Rotate Right':
+    'prefix': 'ror'
+    'body': 'ROR ${0:RX} ${1:N}'
+  'Rotate Left':
+    'prefix': 'rol'
+    'body': 'ROL ${0:RX} ${1:N}'
+  'Rotate Right Through Carry':
+    'prefix': 'rorc'
+    'body': 'RORC ${0:RX} ${1:N}'
+  'Rotate Left Through Carry':
+    'prefix': 'rolc'
+    'body': 'ROLC ${0:RX} ${1:N}'
+  'Move':
+    'prefix': 'mov'
+    'body': 'MOV ${0:RX/[RX]/[RX+N]/[RX+RX]/SP} ${1:RX/[RX]/[RX+N]/[RX+RX]/SP/K}'
+  'Move Byte':
+    'prefix': 'movb'
+    'body': 'MOVB ${0:RX/[RX]} ${1:RX/[RX]}'
+  'Move Byte Sign Extension':
+    'prefix': 'movbs'
+    'body': 'MOVBS ${0:RX} ${1:[RX]}'
+  'Move Peripheral':
+    'prefix': 'movp'
+    'body': 'MOVP ${0:RX/[RX]} ${1:RX/[RX]}'
+  'Move Low':
+    'prefix': 'movl'
+    'body': 'MOVL ${0:RX} ${1:K}'
+  'Move High':
+    'prefix': 'movh'
+    'body': 'MOVH ${0:RX} ${1:K}'
+  'Swap':
+    'prefix': 'swap'
+    'body': 'SWAP ${0:RX/[RX]} ${1:RX/[RX]}'
+  'Push':
+    'prefix': 'push'
+    'body': 'PUSH ${0:RX}'
+  'Pop':
+    'prefix': 'pop'
+    'body': 'POP ${0:RX}'
+  'Jump Zero':
+    'prefix': 'jz'
+    'body': 'JZ ${0:LABEL}'
+  'Jump Not Zero':
+    'prefix': 'jnz'
+    'body': 'JNZ ${0:LABEL}'
+  'Jump N':
+    'prefix': 'jn'
+    'body': 'JN ${0:LABEL}'
+  'Jump Not N':
+    'prefix': 'jnn'
+    'body': 'JNN ${0:LABEL}'
+  'Jump (N or Z)':
+    'prefix': 'jp'
+    'body': 'JP ${0:LABEL}'
+  'Jump Not (N or Z)':
+    'prefix': 'jnp'
+    'body': 'JNP ${0:LABEL}'
+  'Jump Carry':
+    'prefix': 'jc'
+    'body': 'JC ${0:LABEL}'
+  'Jump Not Carry':
+    'prefix': 'jnc'
+    'body': 'JNC ${0:LABEL}'
+  'Jump V':
+    'prefix': 'jv'
+    'body': 'JV ${0:LABEL}'
+  'Jump Not V':
+    'prefix': 'jnv'
+    'body': 'JNV ${0:LABEL}'
+  'Jump Equal':
+    'prefix': 'jeq'
+    'body': 'JEQ ${0:LABEL}'
+  'Jump Not Equal':
+    'prefix': 'jne'
+    'body': 'JNE ${0:LABEL}'
+  'Jump Less Than':
+    'prefix': 'jlt'
+    'body': 'JLT ${0:LABEL}'
+  'Jump Less or Equal':
+    'prefix': 'jle'
+    'body': 'JLE ${0:LABEL}'
+  'Jump Greater Than':
+    'prefix': 'jgt'
+    'body': 'JGT ${0:LABEL}'
+  'Jump Greater or Equal':
+    'prefix': 'jge'
+    'body': 'JGE ${0:LABEL}'
+  'Jump Above':
+    'prefix': 'ja'
+    'body': 'JA ${0:LABEL}'
+  'Jump Above or Equal':
+    'prefix': 'jae'
+    'body': 'JAE ${0:LABEL}'
+  'Jump Below':
+    'prefix': 'jb'
+    'body': 'JB ${0:LABEL}'
+  'Jump Below or Equal':
+    'prefix': 'jbe'
+    'body': 'JBE ${0:LABEL}'
+  'Jump':
+    'prefix': 'jmp'
+    'body': 'JMP ${0:LABEL/RX}'
+  'Call (Stack)':
+    'prefix': 'call'
+    'body': 'CALL ${0:LABEL/RX}'
+  'Call (RL)':
+    'prefix': 'callf'
+    'body': 'CALLF ${0:LABEL/RX}'
+  'Return (Stack)':
+    'prefix': 'ret'
+    'body': 'RET'
+  'Return (RL)':
+    'prefix': 'retf'
+    'body': 'RETF'
+  'Switch To Exception':
+    'prefix': 'swe'
+    'body': 'SWE ${0:K}'
+  'Return From Exception':
+    'prefix': 'rfe'
+    'body': 'RFE'
+  'No Operation':
+    'prefix': 'nop'
+    'body': 'NOP'
+  'Routine Header Comment Block':
+    'prefix': 'rhcb'
+    'body': ';* -- ${0:Routine Name} -------------------------------------------\n;*\n;* Description: --\n;*\n;* Parameters: --\n;* Return: 	--\n;* Destroys: --\n;* Notes: --\n${1:routine_name}:'

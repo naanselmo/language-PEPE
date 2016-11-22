@@ -1,0 +1,107 @@
+'scopeName': 'source.pepe'
+'name': 'PEPE Assembly'
+'fileTypes': [
+  'asm'
+]
+'patterns': [
+  {
+    'include': '#comments'
+  }
+  {
+    'include': '#labels'
+  }
+  {
+    'include': '#instructions'
+  }
+]
+'repository':
+  'comments':
+    'patterns': [
+      {
+        'match': '(;)(.*)'
+        'captures':
+          '1':
+            'name': 'punctuation.definition.comment'
+          '2':
+            'name': 'comment.line'
+      }
+    ]
+  'instructions':
+    'patterns': [
+      {
+        'match': '^(?:\\s*)(\\w+)(?:(?:\\s*;)|(?:(?!:|\\S)(?:\\s*((?:\\[)?\\w+(?:\\])?)(?:,\\s*((?:\\[)?\\w+(?:\\])?))?)?))'
+        'captures':
+          '1':
+            'patterns': [
+              {
+                'match': '^(ADD|ADDC|SUB|SUBB|CMP|MUL|DIV|MOD|NEG|AND|OR|NOT|XOR|TEST|BIT|SET|EI|EI0|EI1|EI2|EI3|SETC|EDMA|CLR|DI|DI0|DI1|DI2|DI3|CLRC|DDMA|CPL|CPLC|SHR|SHL|SHRA|SHLA|ROR|ROL|RORC|ROLC|MOV|MOVB|MOVBS|MOVP|MOVL|MOVH|SWAP|PUSH|POP|JZ|JNZ|JN|JNN|JP|JNP|JC|JNC|JV|JNV|JEQ|JNE|JLT|JLE|JGT|JGE|JA|JAE|JB|JBE|JMP|CALL|CALLF|RET|RETF|SWE|RFE|NOP)$'
+                'name': 'constant.language.instructions.opcode'
+              }
+            ]
+          '2':
+            'patterns': [
+              {
+                'include': '#registers'
+              }
+              {
+                'include': '#constants'
+              }
+            ]
+          '3':
+            'patterns': [
+              {
+                'include': '#registers'
+              }
+              {
+                'include': '#constants'
+              }
+            ]
+      }
+    ]
+  'registers':
+    'patterns': [
+      {
+        'match': '(R(?:10|[0-9]|X))(?!\\])'
+        'name': 'constant.language.registers.general-purpose'
+      }
+      {
+        'match': '(\\[R(?:10|[0-9]|X)\\])'
+        'name': 'constant.language.registers.memory'
+      }
+      {
+        'match': '(SP|BTE)'
+        'name': 'constant.language.registers.special'
+      }
+      {
+        'match': '(R(?:1[1-9]))'
+        'name': 'constant.language.registers.invalid'
+      }
+    ]
+  'constants':
+    'patterns': [
+      {
+        'match': '\\b[01]+b\\b'
+        'name': 'constant.numeric.binary'
+      }
+      {
+        'match': '\\b[0-9]+\\b'
+        'name': 'constant.numeric.dec'
+      }
+      {
+        'match': '\\b([0-9a-fA-F]+[hH]|0x[0-9a-fA-F]+)\\b'
+        'name': 'constant.numeric.hex'
+      }
+      {
+        'match': '\\w+'
+        'name': 'constant.language.macro'
+      }
+    ]
+  'labels':
+    'patterns': [
+      {
+        'match': '^(?:\\s*)(\\w+?)(?::)'
+        'captures':
+          '1':
+            'name': 'constant.language.labels'
+      }
+    ]
