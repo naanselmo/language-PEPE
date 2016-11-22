@@ -1,6 +1,6 @@
 {
   "name": "language-pepe",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "PEPE Assembly language support for Atom",
   "repository": "https://github.com/naanselmo/language-pepe",
