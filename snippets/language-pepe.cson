@@ -1,52 +1,52 @@
 '.source.pepe':
   'Add':
     'prefix': 'add'
-    'body': 'ADD ${0:RX} ${1:RX/K}'
+    'body': 'ADD ${1:RX}, ${0:RX/K}'
   'Add plus Carry':
     'prefix': 'addc'
-    'body': 'ADDC ${0:RX} ${1:RX}'
+    'body': 'ADDC ${1:RX}, ${0:RX}'
   'Subtract':
     'prefix': 'sub'
-    'body': 'SUB ${0:RX} ${1:RX/K}'
+    'body': 'SUB ${1:RX}, ${0:RX/K}'
   'Subtract minus Carry':
     'prefix': 'subb'
-    'body': 'SUBB ${0:RX} ${1:RX}'
+    'body': 'SUBB ${1:RX}, ${0:RX}'
   'Compare':
     'prefix': 'cmp'
-    'body': 'CMP ${0:RX} ${1:RX/K}'
+    'body': 'CMP ${1:RX}, ${0:RX/K}'
   'Multiply':
     'prefix': 'mul'
-    'body': 'MUL ${0:RX} ${1:RX}'
+    'body': 'MUL ${1:RX}, ${0:RX}'
   'Divide':
     'prefix': 'div'
-    'body': 'DIV ${0:RX} ${1:RX}'
+    'body': 'DIV ${1:RX}, ${0:RX}'
   'Modulo':
     'prefix': 'mod'
-    'body': 'MOD ${0:RX} ${1:RX}'
+    'body': 'MOD ${1:RX}, ${0:RX}'
   'Negate':
     'prefix': 'neg'
     'body': 'NEG ${0:RX}'
   'Bitwise And':
     'prefix': 'and'
-    'body': 'AND ${0:RX} ${1:RX}'
+    'body': 'AND ${1:RX}, ${0:RX}'
   'Bitwise Or':
     'prefix': 'or'
-    'body': 'OR ${0:RX} ${1:RX}'
+    'body': 'OR ${1:RX}, ${0:RX}'
   'Not':
     'prefix': 'not'
     'body': 'NOT ${0:RX}'
   'Exclusive OR':
     'prefix': 'xor'
-    'body': 'XOR ${0:RX} ${1:RX}'
+    'body': 'XOR ${1:RX}, ${0:RX}'
   'Test':
     'prefix': 'test'
-    'body': 'TEST ${0:RX} ${1:RX}'
+    'body': 'TEST ${1:RX}, ${0:RX}'
   'Bit':
     'prefix': 'bit'
-    'body': 'BIT ${0:RX} ${1:N}'
+    'body': 'BIT ${1:RX}, ${0:N}'
   'Set':
     'prefix': 'set'
-    'body': 'SET ${0:RX} ${1:N}'
+    'body': 'SET ${1:RX}, ${0:N}'
   'Enable Interrupts':
     'prefix': 'ei'
     'body': 'EI}'
@@ -70,7 +70,7 @@
     'body': 'EDMA'
   'Clear Bit':
     'prefix': 'clr'
-    'body': 'CLR ${0:RX} ${1:N}'
+    'body': 'CLR ${1:RX}, ${0:N}'
   'Disable Interrupts':
     'prefix': 'di'
     'body': 'DI'
@@ -94,55 +94,55 @@
     'body': 'DDMA'
   'Complement Bit':
     'prefix': 'cpl'
-    'body': 'CPL ${0:RX} ${1:N}'
+    'body': 'CPL ${1:RX}, ${0:N}'
   'Complement Carry Flag':
     'prefix': 'cplc'
     'body': 'CPLC'
   'Shift Right':
     'prefix': 'shr'
-    'body': 'SHR ${0:RX} ${1:N}'
+    'body': 'SHR ${1:RX}, ${0:N}'
   'Shift Left':
     'prefix': 'shl'
-    'body': 'SHL ${0:RX} ${1:N}'
+    'body': 'SHL ${1:RX}, ${0:N}'
   'Shift Right Arithmetic':
     'prefix': 'shra'
-    'body': 'SHRA ${0:RX} ${1:N}'
+    'body': 'SHRA ${1:RX}, ${0:N}'
   'Shift Left Arithmetic':
     'prefix': 'shla'
-    'body': 'SHLA ${0:RX} ${1:N}'
+    'body': 'SHLA ${1:RX}, ${0:N}'
   'Rotate Right':
     'prefix': 'ror'
-    'body': 'ROR ${0:RX} ${1:N}'
+    'body': 'ROR ${1:RX}, ${0:N}'
   'Rotate Left':
     'prefix': 'rol'
-    'body': 'ROL ${0:RX} ${1:N}'
+    'body': 'ROL ${1:RX}, ${0:N}'
   'Rotate Right Through Carry':
     'prefix': 'rorc'
-    'body': 'RORC ${0:RX} ${1:N}'
+    'body': 'RORC ${1:RX}, ${0:N}'
   'Rotate Left Through Carry':
     'prefix': 'rolc'
-    'body': 'ROLC ${0:RX} ${1:N}'
+    'body': 'ROLC ${1:RX}, ${0:N}'
   'Move':
     'prefix': 'mov'
-    'body': 'MOV ${0:RX/[RX]/[RX+N]/[RX+RX]/SP} ${1:RX/[RX]/[RX+N]/[RX+RX]/SP/K}'
+    'body': 'MOV ${1:RX/[RX]/[RX+N]/[RX+RX]/SP}, ${0:RX/[RX]/[RX+N]/[RX+RX]/SP/K}'
   'Move Byte':
     'prefix': 'movb'
-    'body': 'MOVB ${0:RX/[RX]} ${1:RX/[RX]}'
+    'body': 'MOVB ${1:RX/[RX]}, ${0:RX/[RX]}'
   'Move Byte Sign Extension':
     'prefix': 'movbs'
-    'body': 'MOVBS ${0:RX} ${1:[RX]}'
+    'body': 'MOVBS ${1:RX}, ${0:[RX]}'
   'Move Peripheral':
     'prefix': 'movp'
-    'body': 'MOVP ${0:RX/[RX]} ${1:RX/[RX]}'
+    'body': 'MOVP ${1:RX/[RX]}, ${0:RX/[RX]}'
   'Move Low':
     'prefix': 'movl'
-    'body': 'MOVL ${0:RX} ${1:K}'
+    'body': 'MOVL ${1:RX}, ${0:K}'
   'Move High':
     'prefix': 'movh'
-    'body': 'MOVH ${0:RX} ${1:K}'
+    'body': 'MOVH ${1:RX}, ${0:K}'
   'Swap':
     'prefix': 'swap'
-    'body': 'SWAP ${0:RX/[RX]} ${1:RX/[RX]}'
+    'body': 'SWAP ${1:RX/[RX]}, ${0:RX/[RX]}'
   'Push':
     'prefix': 'push'
     'body': 'PUSH ${0:RX}'
@@ -155,10 +155,10 @@
   'Jump Not Zero':
     'prefix': 'jnz'
     'body': 'JNZ ${0:LABEL}'
-  'Jump N':
+  'Jump Negative':
     'prefix': 'jn'
     'body': 'JN ${0:LABEL}'
-  'Jump Not N':
+  'Jump Not Negative':
     'prefix': 'jnn'
     'body': 'JNN ${0:LABEL}'
   'Jump (N or Z)':
@@ -233,6 +233,12 @@
   'No Operation':
     'prefix': 'nop'
     'body': 'NOP'
-  'Routine Header Comment Block':
-    'prefix': 'rhcb'
-    'body': ';* -- ${0:Routine Name} -------------------------------------------\n;*\n;* Description: --\n;*\n;* Parameters: --\n;* Return: 	--\n;* Destroys: --\n;* Notes: --\n${1:routine_name}:'
+  'Routine Header Comment':
+    'prefix': 'routine'
+    'body': ';* -- ${0:Routine Name} -------------------------------------------\n;*\n;* Description: --\n;*\n;* Parameters: --\n;* Return: 	--\n;* Destroys: --\n;* Notes: --\n${1:routine_name}:\n\tNOP\n\tRET'
+  'Loop':
+    'prefix': 'loop'
+    'body': '${0:loop}_start:\n\tNOP\n\tJNZ ${0:loop}_start\n${0:loop}_end:\n\tNOP'
+  'Push & Pop':
+    'prefix': 'pp'
+    'body': 'PUSH R${0:X}\nPOP R${0:X}'

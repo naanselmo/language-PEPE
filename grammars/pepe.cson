@@ -13,6 +13,9 @@
   {
     'include': '#instructions'
   }
+  {
+    'include': '#preprocessor'
+  }
 ]
 'repository':
   'comments':
@@ -21,23 +24,18 @@
         'match': '(;)(.*)'
         'captures':
           '1':
-            'name': 'punctuation.definition.comment'
+            'name': 'pepe.punctuation.comment'
           '2':
-            'name': 'comment.line'
+            'name': 'pepe.line.comment'
       }
     ]
   'instructions':
     'patterns': [
       {
-        'match': '^(?:\\s*)(\\w+)(?:(?:\\s*;)|(?:(?!:|\\S)(?:\\s*((?:\\[)?\\w+(?:\\])?)(?:,\\s*((?:\\[)?\\w+(?:\\])?))?)?))'
+        'match': '^(?:\\s*)(ADD|ADDC|SUB|SUBB|CMP|MUL|DIV|MOD|NEG|AND|OR|NOT|XOR|TEST|BIT|SET|EI|EI0|EI1|EI2|EI3|SETC|EDMA|CLR|DI|DI0|DI1|DI2|DI3|CLRC|DDMA|CPL|CPLC|SHR|SHL|SHRA|SHLA|ROR|ROL|RORC|ROLC|MOV|MOVB|MOVBS|MOVP|MOVL|MOVH|SWAP|PUSH|POP|JZ|JNZ|JN|JNN|JP|JNP|JC|JNC|JV|JNV|JEQ|JNE|JLT|JLE|JGT|JGE|JA|JAE|JB|JBE|JMP|CALL|CALLF|RET|RETF|SWE|RFE|NOP)(?:(?:\\s*;)|(?:(?!:|\\S)(?:\\s*((?:\\[)?\\w+(?:\\])?)(?:(,)\\s*((?:\\[)?\\w+(?:\\])?))?)?))'
         'captures':
           '1':
-            'patterns': [
-              {
-                'match': '^(ADD|ADDC|SUB|SUBB|CMP|MUL|DIV|MOD|NEG|AND|OR|NOT|XOR|TEST|BIT|SET|EI|EI0|EI1|EI2|EI3|SETC|EDMA|CLR|DI|DI0|DI1|DI2|DI3|CLRC|DDMA|CPL|CPLC|SHR|SHL|SHRA|SHLA|ROR|ROL|RORC|ROLC|MOV|MOVB|MOVBS|MOVP|MOVL|MOVH|SWAP|PUSH|POP|JZ|JNZ|JN|JNN|JP|JNP|JC|JNC|JV|JNV|JEQ|JNE|JLT|JLE|JGT|JGE|JA|JAE|JB|JBE|JMP|CALL|CALLF|RET|RETF|SWE|RFE|NOP)$'
-                'name': 'constant.language.instructions.opcode'
-              }
-            ]
+            'name': 'pepe.keyword.operator'
           '2':
             'patterns': [
               {
@@ -48,6 +46,8 @@
               }
             ]
           '3':
+            'name': 'pepe.meta.separator'
+          '4':
             'patterns': [
               {
                 'include': '#registers'
@@ -58,50 +58,93 @@
             ]
       }
     ]
+  'preprocessor':
+    'patterns': [
+      {
+        'match': '^(?:\\s*)(\\w+)(?:\\s*)(EQU)(?:\\s*)(\\w+)'
+        'captures':
+          '1':
+            'patterns': [
+              {
+                'include': '#constants'
+              }
+            ]
+          '2':
+            'name': 'pepe.meta.keyword'
+          '3':
+            'patterns': [
+              {
+                'include': '#constants'
+              }
+            ]
+      }
+      {
+        'match': '^(?:\\s*)(PLACE|WORD|STRING|TABLE)(?:\\s*)(\\w+)(?:(?:\\s*)(,)(?:\\s*)(\\w+))?'
+        'captures':
+          '1':
+            'name': 'pepe.meta.keyword'
+          '2':
+            'patterns': [
+              {
+                'include': '#constants'
+              }
+            ]
+          '3':
+            'name': 'pepe.syntax.separator'
+          '4':
+            'patterns': [
+              {
+                'include': '#constants'
+              }
+            ]
+      }
+    ]
   'registers':
     'patterns': [
       {
-        'match': '(R(?:10|[0-9]|X))(?!\\])'
-        'name': 'constant.language.registers.general-purpose'
+        'match': '(R(?:1[1-9]))'
+        'name': 'pepe.variable.register.invalid.illegal'
       }
       {
         'match': '(\\[R(?:10|[0-9]|X)\\])'
-        'name': 'constant.language.registers.memory'
+        'name': 'pepe.variable.register'
+      }
+      {
+        'match': '(R(?:10|[0-9]|X))'
+        'name': 'pepe.variable.memory'
       }
       {
         'match': '(SP|BTE)'
         'name': 'constant.language.registers.special'
-      }
-      {
-        'match': '(R(?:1[1-9]))'
-        'name': 'constant.language.registers.invalid'
       }
     ]
   'constants':
     'patterns': [
       {
         'match': '\\b[01]+b\\b'
-        'name': 'constant.numeric.binary'
+        'name': 'pepe.constant.numeric.binary'
       }
       {
         'match': '\\b[0-9]+\\b'
-        'name': 'constant.numeric.dec'
+        'name': 'pepe.constant.numeric.dec'
       }
       {
         'match': '\\b([0-9a-fA-F]+[hH]|0x[0-9a-fA-F]+)\\b'
-        'name': 'constant.numeric.hex'
+        'name': 'pepe.constant.numeric.hex'
       }
       {
         'match': '\\w+'
-        'name': 'constant.language.macro'
+        'name': 'pepe.constant.language.macro'
       }
     ]
   'labels':
     'patterns': [
       {
-        'match': '^(?:\\s*)(\\w+?)(?::)'
+        'match': '^(?:\\s*)(\\w+?)(:)'
         'captures':
           '1':
-            'name': 'constant.language.labels'
+            'name': 'pepe.meta.tag.entity'
+          '2':
+            'name': 'pepe.meta.tag.punctuation'
       }
     ]
